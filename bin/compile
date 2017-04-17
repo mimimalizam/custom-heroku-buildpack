@@ -8,3 +8,4 @@ set -u
 #set -x
 
 cp $1/config/config.yml.example $1/config/config.yml
+cp $1/config/database.yml.example $1/config/database.yml
