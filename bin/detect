@@ -7,7 +7,7 @@ set -u
 # Debug, echo every command
 set -x
 
-if [ -f $1/config/config.yml.example ]; then
+if [ -f $1/config/secrets.yml.example ]; then
   echo "Config file found"
   exit 0
 else

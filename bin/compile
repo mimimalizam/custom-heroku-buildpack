@@ -7,5 +7,14 @@ set -u
 # Debug, echo every command
 #set -x
 
-cp $1/config/config.yml.example $1/config/config.yml
-cp $1/config/database.yml.example $1/config/database.yml
+FILES=("config.yml" "database.yml" "secrets.yml")
+
+for FILE in ${FILES[@]}
+do
+  if [ -f $1/config/${FILE}.example ]; then
+    cp $1/config/${FILE}.example $1/config/${FILE}
+    echo "-----------------------------------"
+    echo "I've just created $FILE file"
+    echo "-----------------------------------"
+  fi
+done
